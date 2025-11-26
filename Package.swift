@@ -59,7 +59,10 @@ let package = Package(
 //        .package(url: "https://github.com/WenchaoD/FSCalendar.git", .upToNextMajor(from: "2.8.4")),
         .package(url: "https://github.com/Juanpe/SkeletonView.git", .upToNextMajor(from: "1.7.0")),
         .package(url: "https://github.com/alickbass/CodableFirebase", .upToNextMajor(from: "0.2.2")),
-        .package(path: "../Peko-AE-iOS-Utility")
+        .package(url: "https://github.com/makwanahardik82/Peko-AE-iOS-Utility-SPM.git", .upToNextMajor(from: "1.0.0")),
+        
+        
+            //.package(path: "../Peko-AE-iOS-Utility")
     ],
     targets: [
         
@@ -72,7 +75,7 @@ let package = Package(
 //                .product(name: "FSCalendar", package: "FSCalendar"),
                 .product(name: "SkeletonView", package: "SkeletonView"),
                 .product(name: "CodableFirebase", package: "CodableFirebase"),
-                .product(name: "Peko-AE-iOS-Utility", package: "Peko-AE-iOS-Utility")
+                .product(name: "Peko-AE-iOS-Utility", package: "Peko-AE-iOS-Utility-SPM")
             ],
             path: "Sources/Peko-AE-iOS",
             exclude: ["Dashboard"] // avoid duplicate compilation
@@ -82,7 +85,7 @@ let package = Package(
         .target(
             name: "PekoDashboard",
             dependencies: [
-                .product(name: "Peko-AE-iOS-Utility", package: "Peko-AE-iOS-Utility")
+                .product(name: "Peko-AE-iOS-Utility", package: "Peko-AE-iOS-Utility-SPM")
             ],
             path: "Sources/Peko-AE-iOS/Dashboard"
         )
