@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneCodePickerViewController" customModule="Peko_AE_iOS">
+            <connections>
+                <outlet property="noSearchDataView" destination="AeP-Bk-kT0" id="fyz-4Y-MNI"/>
+                <outlet property="searchTxt" destination="GCB-5j-sjH" id="yV8-6b-ank"/>
+                <outlet property="tableView" destination="Hmx-Nl-D6E" id="tPf-wu-3zU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hmx-Nl-D6E">
+                    <rect key="frame" x="0.0" y="188" width="393" height="596"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AeP-Bk-kT0">
+                    <rect key="frame" x="20" y="326" width="353" height="200"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_no_transaction" translatesAutoresizingMaskIntoConstraints="NO" id="5th-hV-KSx">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="170"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search not found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRL-hH-C9c" customClass="PekoLabel" customModule="Peko_AE_iOS">
+                            <rect key="frame" x="0.0" y="170" width="353" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="CEE-1L-iqe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.43921568630000002" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="fontStyleName" value="Bold"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="textKey" value="Search not found"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="5th-hV-KSx" secondAttribute="bottom" constant="30" id="2NS-fH-Z3j"/>
+                        <constraint firstItem="5th-hV-KSx" firstAttribute="leading" secondItem="AeP-Bk-kT0" secondAttribute="leading" id="2dO-jj-iJX"/>
+                        <constraint firstAttribute="bottom" secondItem="IRL-hH-C9c" secondAttribute="bottom" id="UW9-kz-Mta"/>
+                        <constraint firstAttribute="height" constant="200" id="bW5-tE-zV8"/>
+                        <constraint firstAttribute="trailing" secondItem="IRL-hH-C9c" secondAttribute="trailing" id="etT-hC-HDY"/>
+                        <constraint firstAttribute="trailing" secondItem="5th-hV-KSx" secondAttribute="trailing" id="q8j-UY-551"/>
+                        <constraint firstItem="5th-hV-KSx" firstAttribute="top" secondItem="AeP-Bk-kT0" secondAttribute="top" id="uHf-g0-jMS"/>
+                        <constraint firstItem="IRL-hH-C9c" firstAttribute="leading" secondItem="AeP-Bk-kT0" secondAttribute="leading" id="zRN-RQ-UtJ"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ss5-IY-K4P">
+                    <rect key="frame" x="0.0" y="118" width="393" height="70"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P64-7z-Wap">
+                            <rect key="frame" x="20" y="7" width="353" height="56"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_search_gray" translatesAutoresizingMaskIntoConstraints="NO" id="9mO-PH-tr9">
+                                    <rect key="frame" x="304" y="0.0" width="44" height="56"/>
+                                    <color key="tintColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="qlM-im-M1O"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GCB-5j-sjH" customClass="PekoTextField" customModule="Peko_AE_iOS">
+                                    <rect key="frame" x="10" y="0.0" width="294" height="56"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="9mO-PH-tr9" secondAttribute="trailing" constant="5" id="7n9-bn-OiM"/>
+                                <constraint firstItem="GCB-5j-sjH" firstAttribute="leading" secondItem="P64-7z-Wap" secondAttribute="leading" constant="10" id="9EZ-SZ-2k3"/>
+                                <constraint firstAttribute="height" constant="56" id="Adn-KA-bgO"/>
+                                <constraint firstAttribute="bottom" secondItem="9mO-PH-tr9" secondAttribute="bottom" id="PxR-d6-DlG"/>
+                                <constraint firstItem="9mO-PH-tr9" firstAttribute="top" secondItem="P64-7z-Wap" secondAttribute="top" id="SQS-9N-Rmd"/>
+                                <constraint firstItem="GCB-5j-sjH" firstAttribute="top" secondItem="P64-7z-Wap" secondAttribute="top" id="dAJ-qJ-lwm"/>
+                                <constraint firstItem="9mO-PH-tr9" firstAttribute="leading" secondItem="GCB-5j-sjH" secondAttribute="trailing" id="dhM-wv-5dG"/>
+                                <constraint firstAttribute="bottom" secondItem="GCB-5j-sjH" secondAttribute="bottom" id="fF3-Uv-xYG"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="P64-7z-Wap" firstAttribute="leading" secondItem="ss5-IY-K4P" secondAttribute="leading" constant="20" id="JDe-af-TlB"/>
+                        <constraint firstAttribute="height" constant="70" id="ecr-UG-oSk"/>
+                        <constraint firstItem="P64-7z-Wap" firstAttribute="centerY" secondItem="ss5-IY-K4P" secondAttribute="centerY" id="i3w-us-eaR"/>
+                        <constraint firstAttribute="trailing" secondItem="P64-7z-Wap" secondAttribute="trailing" constant="20" id="opf-LR-lxa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AeP-Bk-kT0" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="2Ia-9X-Mg5"/>
+                <constraint firstItem="Hmx-Nl-D6E" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="5RA-Di-Rnf"/>
+                <constraint firstItem="Hmx-Nl-D6E" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5so-cT-30p"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AeP-Bk-kT0" secondAttribute="trailing" constant="20" id="7hC-wl-RAz"/>
+                <constraint firstItem="ss5-IY-K4P" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9E2-zi-Daj"/>
+                <constraint firstItem="Hmx-Nl-D6E" firstAttribute="top" secondItem="ss5-IY-K4P" secondAttribute="bottom" id="9K9-o7-PEg"/>
+                <constraint firstItem="ss5-IY-K4P" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DmO-bH-3g3"/>
+                <constraint firstItem="AeP-Bk-kT0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Fuo-og-ZsV"/>
+                <constraint firstItem="ss5-IY-K4P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bo7-vX-h9p"/>
+                <constraint firstItem="AeP-Bk-kT0" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dUU-Vg-6IC"/>
+                <constraint firstItem="Hmx-Nl-D6E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o6L-4B-1oA"/>
+            </constraints>
+            <point key="canvasLocation" x="-89" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_no_transaction" width="513" height="420"/>
+        <image name="icon_search_gray" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

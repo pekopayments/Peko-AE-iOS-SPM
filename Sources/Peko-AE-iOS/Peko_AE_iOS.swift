@@ -2,16 +2,38 @@
 // https://docs.swift.org/swift-book
 
 import UIKit
-import Peko_AE_iOS_Utility
-import PekoDashboard
 
+@MainActor
 public class PekoManager: NSObject {
 
     // public let sharedInstance = PekoManager()
    
     public override init() {
         super.init()
+        
+        objShareManager.appTarget = .PEKO_TEST
+        objShareManager.selectedCountry = .UAE
+       
+        _ = Self.runOnce
     }
+    
+    static let runOnce: Void = {
+        let bundle = Bundle.module
+        
+        let fontURLs = [
+            bundle.url(forResource: "Roboto-Bold", withExtension: "ttf"),
+            bundle.url(forResource: "Roboto-Italic", withExtension: "ttf"),
+            bundle.url(forResource: "Roboto-Light", withExtension: "ttf"),
+            bundle.url(forResource: "Roboto-Medium", withExtension: "ttf"),
+            bundle.url(forResource: "Roboto-Regular", withExtension: "ttf"),
+            bundle.url(forResource: "Inter-SemiBold", withExtension: "ttf")
+            
+        ].compactMap { $0 }
+        
+        for url in fontURLs {
+            CTFontManagerRegisterFontsForURL(url as CFURL, .process, nil)
+        }
+    }()
     
     @MainActor
     public func userLogin(username:String, password:String, viewController:UIViewController) {

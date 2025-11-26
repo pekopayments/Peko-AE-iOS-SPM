@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimePickerViewController" customModule="Peko_AE_iOS">
+            <connections>
+                <outlet property="containerView" destination="ddp-oa-jMI" id="7Dz-aE-XMC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJD-uq-k9C">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <connections>
+                        <action selector="closeButtonClick:" destination="-1" eventType="touchUpInside" id="m9q-YM-yUM"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddp-oa-jMI">
+                    <rect key="frame" x="59" y="288.66666666666669" width="275" height="275.00000000000006"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIb-6K-EdI" customClass="PekoButton" customModule="Peko_AE_iOS">
+                            <rect key="frame" x="15" y="220" width="245" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="qpx-30-VgG"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Done"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="textKey" value="Done"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="buttonStyleName" value="Submit"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectButtonClick:" destination="-1" eventType="touchUpInside" id="UeJ-Z3-3az"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="CIb-6K-EdI" secondAttribute="trailing" constant="15" id="82a-3a-7IU"/>
+                        <constraint firstAttribute="height" constant="275" id="Bf3-K4-P7g"/>
+                        <constraint firstAttribute="bottom" secondItem="CIb-6K-EdI" secondAttribute="bottom" constant="15" id="Ysh-13-vgZ"/>
+                        <constraint firstItem="CIb-6K-EdI" firstAttribute="leading" secondItem="ddp-oa-jMI" secondAttribute="leading" constant="15" id="dle-gd-v8t"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ddp-oa-jMI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4nr-03-AMQ"/>
+                <constraint firstItem="LJD-uq-k9C" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="EOH-kN-SNk"/>
+                <constraint firstItem="ddp-oa-jMI" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.7" id="JFs-LG-dAL"/>
+                <constraint firstItem="LJD-uq-k9C" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ovc-W0-1Mg"/>
+                <constraint firstItem="LJD-uq-k9C" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="arG-zZ-M6y"/>
+                <constraint firstItem="ddp-oa-jMI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="rrT-p9-n9Y"/>
+                <constraint firstAttribute="bottom" secondItem="LJD-uq-k9C" secondAttribute="bottom" id="yo2-XE-ulg"/>
+            </constraints>
+            <point key="canvasLocation" x="-95.419847328244273" y="-1.4084507042253522"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
