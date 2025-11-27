@@ -36,9 +36,9 @@ let package = Package(
                 .product(name: "Alamofire", package: "Alamofire"),
                 .product(name: "SDWebImage", package: "SDWebImage"),
             ],
-            resources: [
-                .process("Fonts")   // <-- Include font files
-            ]
+//            resources: [
+//                .process("Fonts")   // <-- Include font files
+//            ]
         ),
         .binaryTarget(name: "PekoSDK", path: "./PekoSDK.xcframework")
     ]
