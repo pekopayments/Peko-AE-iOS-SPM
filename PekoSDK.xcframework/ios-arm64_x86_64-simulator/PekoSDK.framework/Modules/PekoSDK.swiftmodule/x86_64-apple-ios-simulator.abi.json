@@ -8205,18 +8205,12 @@
           {
             "kind": "Function",
             "name": "userLogin",
-            "printedName": "userLogin(username:password:viewController:)",
+            "printedName": "userLogin(token:viewController:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -8232,8 +8226,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:7PekoSDK0A10SDKManagerC9userLogin8username8password14viewControllerySS_SSSo06UIViewI0CtF",
-            "mangledName": "$s7PekoSDK0A10SDKManagerC9userLogin8username8password14viewControllerySS_SSSo06UIViewI0CtF",
+            "usr": "s:7PekoSDK0A10SDKManagerC9userLogin5token14viewControllerySS_So06UIViewH0CtF",
+            "mangledName": "$s7PekoSDK0A10SDKManagerC9userLogin5token14viewControllerySS_So06UIViewH0CtF",
             "moduleName": "PekoSDK",
             "declAttributes": [
               "AccessControl",
@@ -17575,7 +17569,7 @@
     {
       "filePath": "\/Users\/apple\/Clients Work\/Kashif Sir\/Peko Work\/PEKO UAE SDK Work\/PekoSDK\/PekoSDK\/Project Files\/ViewControllers\/Peko Services\/Subscription - Software\/SubscriptionPaymentsViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 5552,
+      "offset": 5713,
       "length": 5,
       "value": "false"
     },

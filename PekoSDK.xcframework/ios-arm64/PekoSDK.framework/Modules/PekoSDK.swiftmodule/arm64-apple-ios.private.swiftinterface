@@ -212,7 +212,7 @@ public struct LoginViewModel {
 }
 @objc @_inheritsConvenienceInitializers public class PekoSDKManager : ObjectiveC.NSObject {
   @objc override dynamic public init()
-  @_Concurrency.MainActor public func userLogin(username: Swift.String, password: Swift.String, viewController: UIKit.UIViewController)
+  @_Concurrency.MainActor public func userLogin(token: Swift.String, viewController: UIKit.UIViewController)
   @objc deinit
 }
 extension PekoSDK.EGFloatingTextFieldValidationType : Swift.Equatable {}

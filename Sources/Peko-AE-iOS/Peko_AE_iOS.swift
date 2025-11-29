@@ -4,16 +4,16 @@
 import PekoSDK
 import UIKit
 
-public class PekoManager {
-    public init(){
-    
-    }
-    @MainActor public func userLogin(userName:String, password:String, viewController: UIViewController) {
-       
-        let userName = "100000001"
-        let password = "Admin@123"
-       
-        let obj = PekoSDKManager()
-        obj.userLogin(username: userName, password: password, viewController: viewController)
-    }
-}
+//public class PekoManager {
+//    public init(){
+//    
+//    }
+//    @MainActor public func userLogin(userName:String, password:String, viewController: UIViewController) {
+//       
+////        let userName = "100000001"
+////        let password = "Admin@123"
+////       
+//        let obj = PekoSDKManager()
+//        obj.userLogin(token: "", viewController: viewController)
+//    }
+//}
