@@ -1,8 +1,8 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 //import 
-import PekoSDK
-import UIKit
+//import PekoSDK
+//import UIKit
 
 //public class PekoManager {
 //    public init(){

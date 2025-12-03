@@ -7,7 +7,6 @@ import DeveloperToolsSupport
 import DeviceCheck
 import Foundation
 import ImageIO
-import MessageUI
 import ReplayKit
 import SafariServices
 import Security
@@ -79,6 +78,13 @@ extension UIKit.UIImage {
   #if compiler(>=5.3) && $NonescapableTypes
   @available(iOS 9.0, *)
   public class func gif(asset: Swift.String) -> UIKit.UIImage?
+  #endif
+}
+extension UIKit.UIApplication {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor @preconcurrency public var currentKeyWindow: UIKit.UIWindow? {
+    get
+  }
   #endif
 }
 public struct LoginRequest : Swift.Encodable {
@@ -201,6 +207,143 @@ public struct AppValidationResult {
   public init(success: Swift.Bool, error: Swift.String?)
   #endif
 }
+public enum ParallaxHeaderMode : Swift.Int {
+  case fill
+  case top
+  case topFill
+  case center
+  case centerFill
+  case bottom
+  case bottomFill
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers open class BarPlot : PekoSDK.Plot {
+  public init(identifier: Swift.String)
+  @objc deinit
+}
+@objc public enum ScrollableGraphViewDataPointType : Swift.Int {
+  case circle
+  case square
+  case custom
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ScrollableGraphViewLineStyle : Swift.Int {
+  case straight
+  case smooth
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ScrollableGraphViewFillType : Swift.Int {
+  case solid
+  case gradient
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ScrollableGraphViewGradientType : Swift.Int {
+  case linear
+  case radial
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers open class Plot {
+  open var identifier: Swift.String!
+  open var animationDuration: Swift.Double
+  open var adaptAnimationType_: Swift.Int {
+    get
+    set
+  }
+  open var adaptAnimationType: PekoSDK.ScrollableGraphViewAnimationType
+  open var customAnimationEasingFunction: ((_ t: Swift.Double) -> Swift.Double)?
+  @objc deinit
+}
+@objc public enum ScrollableGraphViewAnimationType : Swift.Int {
+  case easeOut
+  case elastic
+  case custom
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol ScrollableGraphViewDataSource : AnyObject {
+  func value(forPlot plot: PekoSDK.Plot, atIndex pointIndex: Swift.Int) -> Swift.Double
+  func label(atIndex pointIndex: Swift.Int) -> Swift.String
+  func numberOfPoints() -> Swift.Int
+}
+@objc public enum ScrollableGraphViewReferenceLinePosition : Swift.Int {
+  case left
+  case right
+  case both
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ReferenceLinePositioningType : Swift.Int {
+  case relative
+  case absolute
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ScrollableGraphViewReferenceLineType : Swift.Int {
+  case cover
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum ScrollableGraphViewDirection : Swift.Int {
+  case leftToRight
+  case rightToLeft
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 public struct LoginViewModel {
   public init()
   #if compiler(>=5.3) && $NonescapableTypes
@@ -208,6 +351,9 @@ public struct LoginViewModel {
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public func logout(response: @escaping (PekoSDK.CommonResponseModel?, _ error: (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public func autoLogin(token: Swift.String, response: @escaping (PekoSDK.ResponseModel<PekoSDK.LoginDataModel>?, _ error: (any Swift.Error)?) -> Swift.Void)
   #endif
 }
 @objc @_inheritsConvenienceInitializers public class PekoSDKManager : ObjectiveC.NSObject {
@@ -221,3 +367,33 @@ extension PekoSDK.AnimationType : Swift.Equatable {}
 extension PekoSDK.AnimationType : Swift.Hashable {}
 extension PekoSDK.LiveIcon : Swift.Equatable {}
 extension PekoSDK.LiveIcon : Swift.Hashable {}
+extension PekoSDK.ParallaxHeaderMode : Swift.Equatable {}
+extension PekoSDK.ParallaxHeaderMode : Swift.Hashable {}
+extension PekoSDK.ParallaxHeaderMode : Swift.RawRepresentable {}
+extension PekoSDK.ScrollableGraphViewDataPointType : Swift.Equatable {}
+extension PekoSDK.ScrollableGraphViewDataPointType : Swift.Hashable {}
+extension PekoSDK.ScrollableGraphViewDataPointType : Swift.RawRepresentable {}
+extension PekoSDK.ScrollableGraphViewLineStyle : Swift.Equatable {}
+extension PekoSDK.ScrollableGraphViewLineStyle : Swift.Hashable {}
+extension PekoSDK.ScrollableGraphViewLineStyle : Swift.RawRepresentable {}
+extension PekoSDK.ScrollableGraphViewFillType : Swift.Equatable {}
+extension PekoSDK.ScrollableGraphViewFillType : Swift.Hashable {}
+extension PekoSDK.ScrollableGraphViewFillType : Swift.RawRepresentable {}
+extension PekoSDK.ScrollableGraphViewGradientType : Swift.Equatable {}
+extension PekoSDK.ScrollableGraphViewGradientType : Swift.Hashable {}
+extension PekoSDK.ScrollableGraphViewGradientType : Swift.RawRepresentable {}
+extension PekoSDK.ScrollableGraphViewAnimationType : Swift.Equatable {}
+extension PekoSDK.ScrollableGraphViewAnimationType : Swift.Hashable {}
+extension PekoSDK.ScrollableGraphViewAnimationType : Swift.RawRepresentable {}
+extension PekoSDK.ScrollableGraphViewReferenceLinePosition : Swift.Equatable {}
+extension PekoSDK.ScrollableGraphViewReferenceLinePosition : Swift.Hashable {}
+extension PekoSDK.ScrollableGraphViewReferenceLinePosition : Swift.RawRepresentable {}
+extension PekoSDK.ReferenceLinePositioningType : Swift.Equatable {}
+extension PekoSDK.ReferenceLinePositioningType : Swift.Hashable {}
+extension PekoSDK.ReferenceLinePositioningType : Swift.RawRepresentable {}
+extension PekoSDK.ScrollableGraphViewReferenceLineType : Swift.Equatable {}
+extension PekoSDK.ScrollableGraphViewReferenceLineType : Swift.Hashable {}
+extension PekoSDK.ScrollableGraphViewReferenceLineType : Swift.RawRepresentable {}
+extension PekoSDK.ScrollableGraphViewDirection : Swift.Equatable {}
+extension PekoSDK.ScrollableGraphViewDirection : Swift.Hashable {}
+extension PekoSDK.ScrollableGraphViewDirection : Swift.RawRepresentable {}
