@@ -363,9 +363,24 @@ public struct LoginViewModel {
   @_Concurrency.MainActor public func autoLogin(token: Swift.String, response: @escaping (PekoSDK.ResponseModel<PekoSDK.LoginDataModel>?, _ error: (any Swift.Error)?) -> Swift.Void)
   #endif
 }
+public enum PekoEnvironment : Swift.Int {
+  case Development
+  case Production
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers public class PekoSDKManager : ObjectiveC.NSObject {
   public static let sharedInstance: PekoSDK.PekoSDKManager
   public var appearance: PekoSDK.PekoAppearance
+  @_Concurrency.MainActor public var environment: PekoSDK.PekoEnvironment {
+    get
+    set
+  }
   @objc override dynamic public init()
   @_Concurrency.MainActor public func userLogin(token: Swift.String, viewController: UIKit.UIViewController)
   @objc deinit
@@ -406,3 +421,6 @@ extension PekoSDK.ScrollableGraphViewReferenceLineType : Swift.RawRepresentable 
 extension PekoSDK.ScrollableGraphViewDirection : Swift.Equatable {}
 extension PekoSDK.ScrollableGraphViewDirection : Swift.Hashable {}
 extension PekoSDK.ScrollableGraphViewDirection : Swift.RawRepresentable {}
+extension PekoSDK.PekoEnvironment : Swift.Equatable {}
+extension PekoSDK.PekoEnvironment : Swift.Hashable {}
+extension PekoSDK.PekoEnvironment : Swift.RawRepresentable {}
