@@ -67,7 +67,7 @@ let package = Package(
         .package(url: "https://github.com/simla-tech/Fastis", .upToNextMajor(from: "3.2.0")),
         .package(url: "https://github.com/airbnb/lottie-ios", .upToNextMajor(from: "4.5.2")),
         .package(url: "https://github.com/warchimede/RangeSlider", .upToNextMajor(from: "1.2.0")),
-        .package(url: "https://github.com/makwanahardik82/NISDK.git", .upToNextMajor(from: "1.0.0")),
+     //   .package(url: "https://github.com/makwanahardik82/NISDK.git", .upToNextMajor(from: "1.0.0")),
         
     ],
     targets: [
@@ -83,7 +83,7 @@ let package = Package(
                 .product(name: "SDWebImage", package: "SDWebImage"),
                 .product(name: "Lottie", package: "lottie-ios"),
                 .product(name: "WARangeSlider", package: "RangeSlider"),
-                .product(name: "NISdk", package: "NISdk"),
+              //  .product(name: "NISdk", package: "NISdk"),
             ],
         ),
         .binaryTarget(name: "PekoSDK", path: "./PekoSDK.xcframework")
