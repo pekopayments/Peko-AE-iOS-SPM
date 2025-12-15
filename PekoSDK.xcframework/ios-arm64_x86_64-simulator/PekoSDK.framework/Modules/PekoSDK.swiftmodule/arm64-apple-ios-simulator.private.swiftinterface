@@ -3,11 +3,13 @@
 // swift-module-flags: -target arm64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-upcoming-feature DisableOutwardActorInference -enable-upcoming-feature InferSendableFromCaptures -enable-upcoming-feature GlobalActorIsolatedTypesUsability -enable-upcoming-feature MemberImportVisibility -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PekoSDK
 // swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.1
 import AVFoundation
+import Combine
 import DeveloperToolsSupport
 import DeviceCheck
 import Foundation
 import ImageIO
 import PDFKit
+import PassKit
 import ReplayKit
 import SafariServices
 import Security
@@ -17,6 +19,565 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public enum PaymentMedium : Swift.Int, Swift.RawRepresentable {
+  case ApplePay
+  case Card
+  case ThreeDSTwo
+  case SavedCard
+  public var rawVal: PekoSDK.RawValue {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawVal: PekoSDK.RawValue)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct Amount : Swift.Codable {
+  public let currencyCode: Swift.String?
+  public let value: Swift.Double?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(currencyCode: Swift.String?, value: Swift.Double?)
+  #endif
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class AuthResponse : ObjectiveC.NSObject, Swift.Codable {
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct BillingAddress : Swift.Codable {
+  public let firstName: Swift.String?
+  public let lastName: Swift.String?
+  public let address1: Swift.String?
+  public let city: Swift.String?
+  public let countryCode: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum CardProvider : Swift.String, Swift.CaseIterable, Swift.Codable {
+  case masterCard
+  case dinersClubInternational
+  case jcb
+  case americanExpress
+  case discover
+  case jaywan
+  case mada
+  case visa
+  case unknown
+  public var pkNetworkType: PassKit.PKPaymentNetwork {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias AllCases = [PekoSDK.CardProvider]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PekoSDK.CardProvider] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct EmbeddedData {
+  public let order: [PekoSDK.OrderResponse]?
+  public let payment: [PekoSDK.PaymentResponse]?
+}
+extension PekoSDK.EmbeddedData : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct FormattedOrderSummary {
+  public let total: Swift.String?
+}
+extension PekoSDK.FormattedOrderSummary : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct MatchedCandidate : Swift.Codable {
+  public var cardToken: Swift.String?
+  public var eligibilityStatus: Swift.String?
+  public init()
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct OrderLinks {
+  public let paymentLink: Swift.String?
+  public let paymentAuthorizationLink: Swift.String?
+  public var orderLink: Swift.String?
+  public let payPageLink: Swift.String?
+}
+extension PekoSDK.OrderLinks : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class OrderResponse : ObjectiveC.NSObject, Swift.Codable {
+  public var _id: Swift.String?
+  public var type: Swift.String?
+  public var action: Swift.String?
+  public var amount: PekoSDK.Amount?
+  public var formattedAmount: Swift.String?
+  public var language: Swift.String?
+  public var merchantAttributes: [Swift.String : Swift.String]?
+  public var emailAddress: Swift.String?
+  public var reference: Swift.String?
+  public var outletId: Swift.String?
+  public var createDateTime: Swift.String?
+  public var referrer: Swift.String?
+  public var orderSummary: PekoSDK.OrderSummary?
+  public var formattedOrderSummary: PekoSDK.FormattedOrderSummary?
+  public var billingAddress: PekoSDK.BillingAddress?
+  public var paymentMethods: PekoSDK.PaymentMethods?
+  public var orderLinks: PekoSDK.OrderLinks?
+  public var embeddedData: PekoSDK.EmbeddedData?
+  public var savedCard: PekoSDK.SavedCard?
+  public var visSavedCardMatchedCandidates: PekoSDK.VisSavedCardMatchedCandidates?
+  public var isSaudiPaymentEnabled: Swift.Bool?
+  public enum OrderCodingKeys : Swift.String, Swift.CodingKey {
+    case _id
+    case type
+    case action
+    case amount
+    case formattedAmount
+    case language
+    case merchantAttributes
+    case emailAddress
+    case reference
+    case savedCard
+    case outletId
+    case createDateTime
+    case referrer
+    case orderSummary
+    case formattedOrderSummary
+    case billingAddress
+    case paymentMethods
+    case orderLinks
+    case embeddedData
+    case visSavedCardMatchedCandidates
+    case isSaudiPaymentEnabled
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(stringValue: Swift.String)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(intValue: Swift.Int)
+    #endif
+    public typealias RawValue = Swift.String
+    #if compiler(>=5.3) && $NonescapableTypes
+    public var intValue: Swift.Int? {
+      get
+    }
+    #endif
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getAuthCode() -> Swift.String?
+  #endif
+  public static func decodeFrom(data: Foundation.Data) throws -> PekoSDK.OrderResponse
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct OrderSummary {
+  public let total: PekoSDK.Amount?
+}
+extension PekoSDK.OrderSummary : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct PaymentLinks {
+  public let paymentLink: Swift.String?
+  public let cardPaymentLink: Swift.String?
+  public let savedCardPaymentLink: Swift.String?
+  public let threeDSTermURL: Swift.String?
+  public let threeDSTwoAuthenticationURL: Swift.String?
+  public let threeDSTwoChallengeResponseURL: Swift.String?
+  public let applePayLink: Swift.String?
+  public let partialAuthAccept: Swift.String?
+  public let partialAuthDecline: Swift.String?
+  public let aaniPaymentLink: Swift.String?
+}
+extension PekoSDK.PaymentLinks : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class PaymentMethod : ObjectiveC.NSObject, Swift.Codable {
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class PaymentMethods : ObjectiveC.NSObject, Swift.Codable {
+  public var card: [PekoSDK.CardProvider]?
+  public var wallet: [PekoSDK.WalletProvider]?
+  public enum PaymentMethodsCodingKeys : Swift.String, Swift.CodingKey {
+    case card
+    case wallet
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(stringValue: Swift.String)
+    #endif
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(intValue: Swift.Int)
+    #endif
+    public typealias RawValue = Swift.String
+    #if compiler(>=5.3) && $NonescapableTypes
+    public var intValue: Swift.Int? {
+      get
+    }
+    #endif
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc public class PaymentResponse : ObjectiveC.NSObject, Swift.Codable {
+  final public let _id: Swift.String?
+  final public let state: Swift.String
+  final public let reference: Swift.String
+  final public let amount: PekoSDK.Amount?
+  final public let embeddedData: PekoSDK.EmbeddedData?
+  final public let paymentLinks: PekoSDK.PaymentLinks?
+  final public let threeDSConfig: PekoSDK.ThreeDSConfig?
+  final public let threeDSTwoConfig: PekoSDK.ThreeDSTwoConfig?
+  final public let authenticationCode: Swift.String?
+  final public let orderReference: Swift.String?
+  final public let outletId: Swift.String?
+  final public let savedCard: PekoSDK.SavedCard?
+  final public let authResponse: PekoSDK.AuthResponse?
+  final public let paymentMethod: PekoSDK.PaymentMethod?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var threeDSMethodNotificationURL: Swift.String? {
+    get
+  }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var threeDSMethodData: Swift.String? {
+    get
+  }
+  #endif
+  public static func decodeFrom(data: Foundation.Data) throws -> PekoSDK.PaymentResponse
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct SavedCard : Swift.Codable {
+  public var maskedPan: Swift.String?
+  public var expiry: Swift.String?
+  public var cardholderName: Swift.String?
+  public var scheme: Swift.String?
+  public var cardToken: Swift.String?
+  public var recaptureCsc: Swift.Bool
+  public init()
+  public init(maskedPan: Swift.String, expiry: Swift.String, cardholderName: Swift.String, scheme: Swift.String, cardToken: Swift.String, recaptureCsc: Swift.Bool)
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct ThreeDSConfig : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct ThreeDSTwoConfig : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct VisSavedCardMatchedCandidates : Swift.Codable {
+  public var matchedCandidates: [PekoSDK.MatchedCandidate]
+  public init()
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public enum WalletProvider : Swift.String, Swift.Codable, Swift.CaseIterable {
+  case applePay
+  case samsungPay
+  case chinaUnionPay
+  case googlePay
+  case directApplePay
+  case directGooglePay
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias AllCases = [PekoSDK.WalletProvider]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [PekoSDK.WalletProvider] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum NGeniusEnvironments : Swift.String {
+  case UAT
+  case PROD
+  case DEV
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension UIKit.UIScreen {
+  @_Concurrency.MainActor @preconcurrency public var deviceScreenWidth: CoreFoundation.CGFloat {
+    get
+  }
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor @preconcurrency public func pin(to view: UIKit.UIView)
+}
+extension Foundation.URL {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var queryParameters: [Swift.String : Swift.String]? {
+    get
+  }
+  #endif
+}
+public enum HTTPClientErrors : Swift.Error {
+  case missingUrl
+  public static func == (a: PekoSDK.HTTPClientErrors, b: PekoSDK.HTTPClientErrors) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias HttpResponseCallback = (Foundation.Data?, Foundation.URLResponse?, (any Swift.Error)?) -> Swift.Void
+public class HTTPClient {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(url: Swift.String)
+  #endif
+  public func withMethod(method: Swift.String) -> PekoSDK.HTTPClient
+  public func withHeaders(headers: [Swift.String : Swift.String]) -> PekoSDK.HTTPClient
+  public func withBodyData(data: Foundation.Data) -> PekoSDK.HTTPClient
+  public func withBodyData(data: Swift.String) -> PekoSDK.HTTPClient
+  public func withQueryParams(queries: [Swift.String : Swift.String]) -> PekoSDK.HTTPClient
+  public func makeRequest(with completionHandler: @escaping PekoSDK.HttpResponseCallback)
+  @objc deinit
+}
+public enum AaniPaymentStatus : Swift.Int, Swift.RawRepresentable {
+  case success
+  case failed
+  case cancelled
+  case invalidRequest
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ColorCompatibility {
+  public static var label: UIKit.UIColor {
+    get
+  }
+  public static var secondaryLabel: UIKit.UIColor {
+    get
+  }
+  public static var tertiaryLabel: UIKit.UIColor {
+    get
+  }
+  public static var quaternaryLabel: UIKit.UIColor {
+    get
+  }
+  public static var systemFill: UIKit.UIColor {
+    get
+  }
+  public static var secondarySystemFill: UIKit.UIColor {
+    get
+  }
+  public static var tertiarySystemFill: UIKit.UIColor {
+    get
+  }
+  public static var quaternarySystemFill: UIKit.UIColor {
+    get
+  }
+  public static var placeholderText: UIKit.UIColor {
+    get
+  }
+  public static var systemBackground: UIKit.UIColor {
+    get
+  }
+  public static var secondarySystemBackground: UIKit.UIColor {
+    get
+  }
+  public static var tertiarySystemBackground: UIKit.UIColor {
+    get
+  }
+  public static var systemGroupedBackground: UIKit.UIColor {
+    get
+  }
+  public static var secondarySystemGroupedBackground: UIKit.UIColor {
+    get
+  }
+  public static var tertiarySystemGroupedBackground: UIKit.UIColor {
+    get
+  }
+  public static var separator: UIKit.UIColor {
+    get
+  }
+  public static var opaqueSeparator: UIKit.UIColor {
+    get
+  }
+  public static var link: UIKit.UIColor {
+    get
+  }
+  public static var systemIndigo: UIKit.UIColor {
+    get
+  }
+  public static var systemGray2: UIKit.UIColor {
+    get
+  }
+  public static var systemGray3: UIKit.UIColor {
+    get
+  }
+  public static var systemGray4: UIKit.UIColor {
+    get
+  }
+  public static var systemGray5: UIKit.UIColor {
+    get
+  }
+  public static var systemGray6: UIKit.UIColor {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class NISdkColors : ObjectiveC.NSObject {
+  public var cardPreviewColor: UIKit.UIColor
+  public var cardPreviewLabelColor: UIKit.UIColor
+  public var payPageBackgroundColor: UIKit.UIColor
+  public var payPageLabelColor: UIKit.UIColor
+  public var textFieldLabelColor: UIKit.UIColor
+  public var textFieldPlaceholderColor: UIKit.UIColor
+  public var payPageDividerColor: UIKit.UIColor
+  public var payButtonBackgroundColor: UIKit.UIColor
+  public var payButtonTitleColor: UIKit.UIColor
+  public var payButtonTitleColorHighlighted: UIKit.UIColor
+  public var payButtonActivityIndicatorColor: UIKit.UIColor
+  public var payPageTitleColor: UIKit.UIColor
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol AaniPaymentDelegate {
+  func aaniPaymentCompleted(with status: PekoSDK.AaniPaymentStatus)
+}
+@objc public protocol ApplePayDelegate {
+  @objc optional func didSelectPaymentMethod(paymentMethod: PassKit.PKPaymentMethod) -> PassKit.PKPaymentRequestPaymentMethodUpdate
+  @objc optional func didSelectShippingMethod(shippingMethod: PassKit.PKShippingMethod) -> PassKit.PKPaymentRequestShippingMethodUpdate
+  @objc optional func didSelectShippingContact(shippingContact: PassKit.PKContact) -> PassKit.PKPaymentRequestShippingContactUpdate
+}
+public protocol CardPaymentDelegate {
+  func authorizationWillBegin()
+  func authorizationDidBegin()
+  func authorizationDidComplete(with status: PekoSDK.AuthorizationStatus)
+  func paymentDidBegin()
+  func paymentDidComplete(with status: PekoSDK.PaymentStatus)
+  func threeDSChallengeDidBegin()
+  func threeDSChallengeDidComplete(with status: PekoSDK.ThreeDSStatus)
+  func partialAuthBegin()
+}
+public typealias RawValue = Swift.String
+public enum AuthorizationStatus : Swift.Int, Swift.RawRepresentable {
+  case AuthSuccess
+  case AuthFailed
+  public var rawVal: PekoSDK.RawValue {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawVal: PekoSDK.RawValue)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum PaymentStatus : Swift.Int, Swift.RawRepresentable {
+  case PaymentSuccess
+  case PaymentFailed
+  case PaymentCancelled
+  case InValidRequest
+  case PaymentPostAuthReview
+  case PartialAuthDeclined
+  case PartialAuthDeclineFailed
+  case PartiallyAuthorised
+  public var rawVal: PekoSDK.RawValue {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawVal: PekoSDK.RawValue)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum ThreeDSStatus : Swift.Int, Swift.RawRepresentable {
+  case ThreeDSSuccess
+  case ThreeDSFailed
+  public var rawVal: PekoSDK.RawValue {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawVal: PekoSDK.RawValue)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class NISdkBundleLocator {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers final public class NISdk : ObjectiveC.NSObject {
+  public static let sharedInstance: PekoSDK.NISdk
+  final public var shouldShowOrderAmount: Swift.Bool
+  final public var shouldShowCancelAlert: Swift.Bool
+  final public var version: Swift.String
+  @objc override dynamic public init()
+  final public func deviceSupportsApplePay() -> Swift.Bool
+  final public func setSDKLanguage(language: Swift.String)
+  final public func setSDKColors(sdkColors: PekoSDK.NISdkColors)
+  final public func showCardPaymentViewWith(cardPaymentDelegate: any PekoSDK.CardPaymentDelegate, overParent parentViewController: UIKit.UIViewController, for order: PekoSDK.OrderResponse)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func launchSavedCardPayment(cardPaymentDelegate: any PekoSDK.CardPaymentDelegate, overParent parentViewController: UIKit.UIViewController, for order: PekoSDK.OrderResponse, with cvv: Swift.String?)
+  #endif
+  final public func launchSavedCardPayment(cardPaymentDelegate: any PekoSDK.CardPaymentDelegate, overParent parentViewController: UIKit.UIViewController, for order: PekoSDK.OrderResponse)
+  final public func launchAaniPay(aaniPaymentDelegate: any PekoSDK.AaniPaymentDelegate, overParent parentViewController: UIKit.UIViewController, orderResponse: PekoSDK.OrderResponse, backLink: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func initiateApplePayWith(applePayDelegate: (any PekoSDK.ApplePayDelegate)?, cardPaymentDelegate: any PekoSDK.CardPaymentDelegate, overParent parentViewController: UIKit.UIViewController, for order: PekoSDK.OrderResponse, with applePayRequest: PassKit.PKPaymentRequest)
+  #endif
+  final public func executeThreeDSTwo(cardPaymentDelegate: any PekoSDK.CardPaymentDelegate, overParent parentViewController: UIKit.UIViewController, for paymentResponse: PekoSDK.PaymentResponse)
+  @objc deinit
+}
 public struct CustomBool : Swift.Codable, Swift.Sendable {
   public var value: Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
@@ -385,6 +946,33 @@ public enum PekoEnvironment : Swift.Int {
   @_Concurrency.MainActor public func userLogin(token: Swift.String, viewController: UIKit.UIViewController)
   @objc deinit
 }
+extension PekoSDK.PaymentMedium : Swift.Equatable {}
+extension PekoSDK.PaymentMedium : Swift.Hashable {}
+extension PekoSDK.CardProvider : Swift.Equatable {}
+extension PekoSDK.CardProvider : Swift.Hashable {}
+extension PekoSDK.CardProvider : Swift.RawRepresentable {}
+extension PekoSDK.OrderResponse.OrderCodingKeys : Swift.Equatable {}
+extension PekoSDK.OrderResponse.OrderCodingKeys : Swift.Hashable {}
+extension PekoSDK.OrderResponse.OrderCodingKeys : Swift.RawRepresentable {}
+extension PekoSDK.PaymentMethods.PaymentMethodsCodingKeys : Swift.Equatable {}
+extension PekoSDK.PaymentMethods.PaymentMethodsCodingKeys : Swift.Hashable {}
+extension PekoSDK.PaymentMethods.PaymentMethodsCodingKeys : Swift.RawRepresentable {}
+extension PekoSDK.WalletProvider : Swift.Equatable {}
+extension PekoSDK.WalletProvider : Swift.Hashable {}
+extension PekoSDK.WalletProvider : Swift.RawRepresentable {}
+extension PekoSDK.NGeniusEnvironments : Swift.Equatable {}
+extension PekoSDK.NGeniusEnvironments : Swift.Hashable {}
+extension PekoSDK.NGeniusEnvironments : Swift.RawRepresentable {}
+extension PekoSDK.HTTPClientErrors : Swift.Equatable {}
+extension PekoSDK.HTTPClientErrors : Swift.Hashable {}
+extension PekoSDK.AaniPaymentStatus : Swift.Equatable {}
+extension PekoSDK.AaniPaymentStatus : Swift.Hashable {}
+extension PekoSDK.AuthorizationStatus : Swift.Equatable {}
+extension PekoSDK.AuthorizationStatus : Swift.Hashable {}
+extension PekoSDK.PaymentStatus : Swift.Equatable {}
+extension PekoSDK.PaymentStatus : Swift.Hashable {}
+extension PekoSDK.ThreeDSStatus : Swift.Equatable {}
+extension PekoSDK.ThreeDSStatus : Swift.Hashable {}
 extension PekoSDK.EGFloatingTextFieldValidationType : Swift.Equatable {}
 extension PekoSDK.EGFloatingTextFieldValidationType : Swift.Hashable {}
 extension PekoSDK.AnimationType : Swift.Equatable {}

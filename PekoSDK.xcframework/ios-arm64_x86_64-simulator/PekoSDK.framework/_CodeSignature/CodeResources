@@ -370,7 +370,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		BwW8Thcg5y8XdBlP6HaOcLx2bMA=
+		8Roo1k5wOq0RsdM3XB3erHsxFe4=
 		</data>
 		<key>BackNavigationView.nib</key>
 		<data>
@@ -1050,11 +1050,11 @@
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		nR9dtHjnmk3rU5XrGZ6Ok6D3J4E=
+		7dEt6YDJVd5xI15CH57VOpxpLZg=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		aVW807xJ2DopolT9g9iheQxLcxs=
+		bb8YtAGkkya8v40NksK23EGlZKI=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -1062,19 +1062,19 @@
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		aVW807xJ2DopolT9g9iheQxLcxs=
+		bb8YtAGkkya8v40NksK23EGlZKI=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		INSOm7GIVPL5xNqYlyHc0vfnZO0=
+		m6D3w/7AXe8IFtwSlAl7o7gjJg4=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		nR9dtHjnmk3rU5XrGZ6Ok6D3J4E=
+		7dEt6YDJVd5xI15CH57VOpxpLZg=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		UIvQy5K7jMdFKWElU4PDTVHflTg=
+		/NMvomV+Gm8oz4tT36m9lfCMQ2Q=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -1082,11 +1082,11 @@
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		UIvQy5K7jMdFKWElU4PDTVHflTg=
+		/NMvomV+Gm8oz4tT36m9lfCMQ2Q=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		vl8GCDpdT9sU5ZLFAQHBcJ7h8Ks=
+		LPRbgTba5mQ7LrFyIKb7ornWzgA=
 		</data>
 		<key>Notification.storyboardc/Info.plist</key>
 		<data>
@@ -1103,6 +1103,10 @@
 		<key>NotificationTableViewCell.nib</key>
 		<data>
 		SB3vJY8B40VSMia6GiLur2xOL7o=
+		</data>
+		<key>OCRA.otf</key>
+		<data>
+		hV1w1iN/hd6uysNXssz77YVYYBY=
 		</data>
 		<key>OrderfStatusTableViewCell.nib</key>
 		<data>
@@ -1624,6 +1628,15 @@
 		<data>
 		BUIKctvIdpTO0qG9Q5mdd6FbxzU=
 		</data>
+		<key>ar.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ktBg0Yy+J756VE7wmUNvGt/jROw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>eSimHistoryTableViewCell.nib</key>
 		<data>
 		dFh3nxD1wdZQXFKNL+VT7PBY9hM=
@@ -1636,6 +1649,15 @@
 		<data>
 		wkawMeKPfCKciifLa5WRcKloRo8=
 		</data>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YLyhSTwYLHviOQNYCoG86DGcejI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>flag_indices.json</key>
 		<data>
 		lDcO1jEmMyXwbTOVx9mAo9Q7IuA=
@@ -2308,7 +2330,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sKClqM8VU1V14lU+7VbZbQtDRSdekaJcbXoKTCa8ZHw=
+			hoFKlahKurQbSBtBR/KuJUZbbzY8bAHmUMwlQ0yrjko=
 			</data>
 		</dict>
 		<key>BackNavigationView.nib</key>
@@ -3491,14 +3513,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z3K0y9bpG0PtmmiXtxwtug3IYisHS3yFYllrGlHnvWM=
+			jes80vgpY1u8n4a4QTR7BcsLeqLw1qahYjxZYPQaK70=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0YVToWIn6zGwZw1KqSs2ZdskkXV5xKiB3+TZGqr4ztM=
+			W8hQfA/O4R8vLO+vhteQ62e4GJxRtNFOA1Lcgkt4dqQ=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -3512,28 +3534,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0YVToWIn6zGwZw1KqSs2ZdskkXV5xKiB3+TZGqr4ztM=
+			W8hQfA/O4R8vLO+vhteQ62e4GJxRtNFOA1Lcgkt4dqQ=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KD0bokFNVH6FiJPJo6tBVxI72bwzKabHBzdyCpT0wpE=
+			7ZdRvzkQy5QZwHPAPRWMo8rhXtt8HW7nhfobfRWjYbg=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z3K0y9bpG0PtmmiXtxwtug3IYisHS3yFYllrGlHnvWM=
+			jes80vgpY1u8n4a4QTR7BcsLeqLw1qahYjxZYPQaK70=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1EaW2cCL3/4pktNi2qkBr3AzqbrouTkaZmypAEcWtQA=
+			CA3Liu5Xe9A9N7ViSrqOdRguVb/I7O3nOy6gMwe8frM=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -3547,14 +3569,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1EaW2cCL3/4pktNi2qkBr3AzqbrouTkaZmypAEcWtQA=
+			CA3Liu5Xe9A9N7ViSrqOdRguVb/I7O3nOy6gMwe8frM=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4UA8bYtp5Na/8wpP9LUUUMYQ6doYgONCaMUJd7IvRsk=
+			PVs7GJaJ5o9/ZN/+5kuzgCAB9B3/UYvED6/T+CZdp6o=
 			</data>
 		</dict>
 		<key>Notification.storyboardc/Info.plist</key>
@@ -3583,6 +3605,13 @@
 			<key>hash2</key>
 			<data>
 			jy8UQDAgIWQLKPOhCarf3Tc7rxZvwhx332Yg5379kUk=
+			</data>
+		</dict>
+		<key>OCRA.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WFvW9bYv+H7o6rilQXRdCpVfuHPON0a4qQdxKRt1ybw=
 			</data>
 		</dict>
 		<key>OrderfStatusTableViewCell.nib</key>
@@ -4495,6 +4524,15 @@
 			xkEN6f2FXISX5hHvltZDoHuOYKw1T6xKUrluigtzvV8=
 			</data>
 		</dict>
+		<key>ar.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5ls4j1vaNUQ5GymB0i42ANJED4kWLeePIaqjq/caRto=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>eSimHistoryTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
@@ -4515,6 +4553,15 @@
 			<data>
 			pPz3K2DI+7DII82KGGJ+Go9yve7f9AYKlhImZP3nUSY=
 			</data>
+		</dict>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			axRHmb+Wzi8TrtLi6cxnmJvL41rtAzZW7OFzk5jBnKY=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 		<key>flag_indices.json</key>
 		<dict>

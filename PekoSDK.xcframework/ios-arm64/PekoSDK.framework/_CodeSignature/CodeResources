@@ -370,7 +370,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		BwW8Thcg5y8XdBlP6HaOcLx2bMA=
+		8Roo1k5wOq0RsdM3XB3erHsxFe4=
 		</data>
 		<key>BackNavigationView.nib</key>
 		<data>
@@ -1050,11 +1050,11 @@
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		Twkc/i7YDqtavLoBMpzXmOdHGKA=
+		39od+EGj26u1DuiSX4PQbakGPjc=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		zZ7pIqq5lRmEcQyjN0shZUUTISQ=
+		ban8JIz1p1d4Bb+/iJyajJZ8u8w=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -1062,11 +1062,11 @@
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		zZ7pIqq5lRmEcQyjN0shZUUTISQ=
+		ban8JIz1p1d4Bb+/iJyajJZ8u8w=
 		</data>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		4Hrn8t+62zyqhACYWegslLt1uF4=
+		oJL1lfptbYokP8qCq035s0zubnw=
 		</data>
 		<key>Notification.storyboardc/Info.plist</key>
 		<data>
@@ -1083,6 +1083,10 @@
 		<key>NotificationTableViewCell.nib</key>
 		<data>
 		SB3vJY8B40VSMia6GiLur2xOL7o=
+		</data>
+		<key>OCRA.otf</key>
+		<data>
+		hV1w1iN/hd6uysNXssz77YVYYBY=
 		</data>
 		<key>OrderfStatusTableViewCell.nib</key>
 		<data>
@@ -1604,6 +1608,15 @@
 		<data>
 		BUIKctvIdpTO0qG9Q5mdd6FbxzU=
 		</data>
+		<key>ar.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ktBg0Yy+J756VE7wmUNvGt/jROw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>eSimHistoryTableViewCell.nib</key>
 		<data>
 		dFh3nxD1wdZQXFKNL+VT7PBY9hM=
@@ -1616,6 +1629,15 @@
 		<data>
 		wkawMeKPfCKciifLa5WRcKloRo8=
 		</data>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YLyhSTwYLHviOQNYCoG86DGcejI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>flag_indices.json</key>
 		<data>
 		lDcO1jEmMyXwbTOVx9mAo9Q7IuA=
@@ -2288,7 +2310,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sKClqM8VU1V14lU+7VbZbQtDRSdekaJcbXoKTCa8ZHw=
+			hoFKlahKurQbSBtBR/KuJUZbbzY8bAHmUMwlQ0yrjko=
 			</data>
 		</dict>
 		<key>BackNavigationView.nib</key>
@@ -3471,14 +3493,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nh+No9WuYZVKT3rtlAvQ344iX8Y2WpgaOa1vi64m6LI=
+			f3OPuiLlEiq4eK1Ns72tH5gR8UdrP6DaAhZkFXrEvxo=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zk45j7N/LPa/30gy2Uj3dW6QnWL5e2dT1Fb34jRk454=
+			o+8CFxB7HI2kRmzqnBRXjDCCCWwiXVQ4VLNNyFc1tJs=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -3492,14 +3514,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Zk45j7N/LPa/30gy2Uj3dW6QnWL5e2dT1Fb34jRk454=
+			o+8CFxB7HI2kRmzqnBRXjDCCCWwiXVQ4VLNNyFc1tJs=
 			</data>
 		</dict>
 		<key>Modules/PekoSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nF8tM1yxAuVZiUYZz4F674lc8+hdZB7MJTo+10XBuxI=
+			F5a5q2z6/XJ0xD0pdcLTNs/nGPquLkn6RSSi67SSkUw=
 			</data>
 		</dict>
 		<key>Notification.storyboardc/Info.plist</key>
@@ -3528,6 +3550,13 @@
 			<key>hash2</key>
 			<data>
 			jy8UQDAgIWQLKPOhCarf3Tc7rxZvwhx332Yg5379kUk=
+			</data>
+		</dict>
+		<key>OCRA.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WFvW9bYv+H7o6rilQXRdCpVfuHPON0a4qQdxKRt1ybw=
 			</data>
 		</dict>
 		<key>OrderfStatusTableViewCell.nib</key>
@@ -4440,6 +4469,15 @@
 			xkEN6f2FXISX5hHvltZDoHuOYKw1T6xKUrluigtzvV8=
 			</data>
 		</dict>
+		<key>ar.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5ls4j1vaNUQ5GymB0i42ANJED4kWLeePIaqjq/caRto=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>eSimHistoryTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
@@ -4460,6 +4498,15 @@
 			<data>
 			pPz3K2DI+7DII82KGGJ+Go9yve7f9AYKlhImZP3nUSY=
 			</data>
+		</dict>
+		<key>en.lproj/Localizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			axRHmb+Wzi8TrtLi6cxnmJvL41rtAzZW7OFzk5jBnKY=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 		<key>flag_indices.json</key>
 		<dict>
